@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>	
+<?import javafx.geometry.Insets?>  
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="center" prefHeight="380.0" prefWidth="630.0" styleClass="background" spacing="10"
+      fx:controller="controller.TMSController">
+    <HBox alignment="CENTER_LEFT">
+    <Text text="Filter" styleClass="label-h2" />
+      </HBox>
+    <HBox alignment="CENTER">
+       <Label text="Name:"  styleClass="label-opac"/>
+        <TextField  fx:id="nameTF"/>
+        <Label text="Email:"  styleClass="label-opac"/>
+        <TextField  fx:id="emailTF" text="Filter by email"/>
+    </HBox>
+    
+    <Separator/>
+    
+    <TableView fx:id="studentsTv" items="${controller.faculty.students}" >
+        <columns>
+            <TableColumn text="Name" prefWidth="200.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+             <TableColumn text="Email" prefWidth="200.0">
+             <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+             </TableColumn>
+              <TableColumn text="Phone" prefWidth="200.0">
+                  <cellValueFactory>
+                    <PropertyValueFactory property="phone" />
+                </cellValueFactory>
+              </TableColumn>
+        </columns>
+    </TableView>
+    
+    <Separator/>
+    
+    <HBox spacing="10"  styleClass="content">
+         <Button text="Add"/>
+          <Button text="Delete"/>
+            <Button text="Select"/>
+          <Button text="SLIP"/>
+            <Button text="Report"/>
+          <Button text="Close"/>
+    </HBox>
+    
+        
+  <stylesheets>
+        <URL value="@tmsfx.css"/>
+  </stylesheets>
+    
+</VBox>
