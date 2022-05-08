@@ -49,7 +49,7 @@
     <Separator/>
     
     <HBox spacing="10"  styleClass="content">
-         <Button text="Add"/>
+         <Button text="Add" onAction="#handleAddStudent"/>
           <Button text="Delete"/>
             <Button text="Select"/>
           <Button text="SLIP"/>
