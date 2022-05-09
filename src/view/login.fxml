@@ -22,7 +22,7 @@
      <Label text="Email:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="emailTF"/>
        <Label text="Password:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="passwordTF"/>
+      <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="passwordTF"/>
        <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1"  GridPane.rowIndex="3" >
       <Label  styleClass="label-error" fx:id="error">
         </Label >

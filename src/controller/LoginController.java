@@ -23,7 +23,7 @@ public final Session getSession(){
         String email = emailTF.getText();
         String password = passwordTF.getText();
         if(getSession().getFaculty(email, password) != null){
-         ViewLoader.showStage(getSession().getFaculty(email, password), "/view/tms.fxml", "Session Admin: " + getSession().getFaculty(email, password).getName(), new Stage());
+         ViewLoader.showStage(getSession().getFaculty(email, password), "/view/faculty.fxml", "Session Admin: " + getSession().getFaculty(email, password).getName(), new Stage());
         } else{
             error.setText("Incorrect login details");
         }
