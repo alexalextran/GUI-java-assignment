@@ -11,7 +11,8 @@ import model.Student;
 
 
 public class StudentController extends Controller<Student> {
-@FXML private Button addBtn;
+@FXML Button addBtn;
+@FXML Button updateBtn;
 @FXML TextField nameTF;
 @FXML TextField emailTF;
 @FXML TextField phoneTF;
@@ -24,17 +25,24 @@ public class StudentController extends Controller<Student> {
 
 
     @FXML private void initialize() {
-       nameTF.setText(getStudent().getName());
-       emailTF.setText(getStudent().getEmail());
+        emailTF.setText(getStudent().getEmail());
        phoneTF.setText(getStudent().getPhone());
        addressTF.setText(getStudent().getAddress());
        studentidTF.setText(getStudent().getID());
         typeTF.setText(getStudent().getType());
-         creditsTF.setText(String. valueOf(getStudent().getCredits()));
+         creditsTF.setText(String.valueOf(getStudent().getCredits()));
           ScholarshipTF.setText(String.valueOf(getStudent().getScholarship()));
-           deductionTF.setText(String. valueOf(getStudent().getDeduction()));
+          
+       if(!(getStudent().getName().equals("a"))){
+       nameTF.setText(getStudent().getName());
+       deductionTF.setText(String.valueOf(getStudent().getDeduction()));
+        }else{
+            nameTF.setText("");
+             deductionTF.setText("Code");
+           
+       }
     }
-    @FXML private void handleAddStudent(ActionEvent event) throws Exception{
+    @FXML public void handleAddStudent(ActionEvent event) throws Exception{
         String name = nameTF.getText();
         String email = emailTF.getText();
         String phone = phoneTF.getText();
@@ -45,9 +53,30 @@ public class StudentController extends Controller<Student> {
         double scholarship = Double.parseDouble(ScholarshipTF.getText());
         String deduction = deductionTF.getText();
           
-       
+      
         Student student = new Student(name, email, phone, adress, studentid, type, credits, scholarship, deduction);  
-        //getFaculty().addStudent(student);
+        getStudent().getFaculty().addStudent(student);
+              
+    }
+    
+     @FXML public void handleUpdateStudent(ActionEvent event) throws Exception{
+        String name = nameTF.getText();
+        String email = emailTF.getText();
+        String phone = phoneTF.getText();
+        String adress = addressTF.getText();
+        String studentid = studentidTF.getText();
+        String type = typeTF.getText();
+        int credits = Integer.parseInt(creditsTF.getText());
+        double scholarship = Double.parseDouble(ScholarshipTF.getText());
+          String deduction = deductionTF.getText();  
+          
+          if(deduction.equals(getStudent().getDeduction()) && !deduction.equals("0.0")){
+            deduction = "2022AUT";
+       } 
+       
+      getStudent().updateDetails(name, email, phone, adress, studentid, type, credits, scholarship, deduction);   
+       deductionTF.setText(String.valueOf(getStudent().getDeduction()));
+           
     }
     
     

@@ -7,9 +7,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 
 <GridPane prefHeight="338.0" prefWidth="600.0" styleClass="background" alignment="CENTER"  
-          xmlns:fx="http://javafx.com/fxml/1" >
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SlipController"  >
     <padding>
         <Insets top="10" bottom="10" left="10" right="10" />
     </padding>
@@ -19,5 +21,35 @@
         <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
     </columnConstraints>
+    
+    <Text styleClass="label-h2" text="Tuition Slip" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    
+      <Text text="Credits" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+      <Text text="TotalFee" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+      <Text text="Net Fee" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      
+      <Text styleClass="text-out" text="${controller.student.credits}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <Text styleClass="text-out" text="${controller.student.totalFee}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      <Text styleClass="text-out" text="${controller.student.netFee}" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+      
+       <Text text="Pay Per Credit" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+      <Text text="Scholarship" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+      <Text text="Deduction" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+      
+      <Text styleClass="text-out" text="${controller.student.payPerCredit}" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+      <Text styleClass="text-out" text="${controller.student.scholarship}" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+      <Text styleClass="text-out" text="${controller.student.deduction}" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+      
+       <padding>
+        <Insets top="20"  />
+    </padding>
+      
+      <HBox alignment="CENTER_LEFT" GridPane.rowIndex="8" GridPane.columnIndex="1">
+          <Button text="Close"/>
+      </HBox>
+      
+    <stylesheets>
+    <URL value="@tmsfx.css"/>
+  </stylesheets>
     
 </GridPane>

@@ -49,9 +49,9 @@
     
     <HBox spacing="10"  styleClass="content">
          <Button text="Add" onAction="#handleAddStudent"/>
-          <Button text="Delete"/>
+          <Button text="Delete" onAction="#handleDeleteStudent"/>
             <Button text="Select" onAction="#handleSelectStudent" />
-          <Button text="SLIP"/>
+          <Button text="SLIP" onAction="#handleSlip"/>
             <Button text="Report"/>
           <Button text="Close"/>
     </HBox>

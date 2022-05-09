@@ -60,7 +60,7 @@
   
   <HBox spacing="10">
       <Button text="Add" onAction="#handleAddStudent"  fx:id="addBtn"/>
-    <Button text="Update"/>
+    <Button text="Update" onAction="#handleUpdateStudent" fx:id="updateBtn"/>
     <Button text="Close"/>
   </HBox>
   
