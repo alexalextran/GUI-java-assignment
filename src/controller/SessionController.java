@@ -15,4 +15,6 @@ public class SessionController extends Controller<Session> {
         ViewLoader.showStage(new Session(), "/view/login.fxml", "Login", new Stage());
                 
     }
+   
+  
 }

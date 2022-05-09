@@ -9,11 +9,12 @@
 <?import javafx.scene.control.Label ?>
 <?import javafx.scene.layout.GridPane?>	
 <?import javafx.scene.control.TextField ?>
-
+<?import javafx.scene.layout.HBox ?>
 <?import javafx.scene.control.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="400.0" prefWidth="600.0" spacing="20"  alignment="CENTER"
-       >
+   fx:controller="controller.StudentController"    >
+    
     
    <VBox styleClass="header" >
      <Label text="Personal Details" styleClass="label-h2"/>
@@ -26,7 +27,7 @@
       <Label text="Phone:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="phoneTF"/>
       <Label text="Adress:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="adressTF"/>
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="addressTF"/>
      
        
    </GridPane>
@@ -37,15 +38,18 @@
     </padding>
     
     <VBox styleClass="header" alignment="CENTER">
+         <Label text="Tutition Details" styleClass="label-h2"/>
      <GridPane styleClass="header"  alignment="CENTER" hgap="5" vgap="10">
-        <Label text="Name:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Label text="Student ID:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="studentidTF"/>
-       <Label text="Email:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+       <Label text="Type:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="typeTF"/>
-      <Label text="Phone:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+      <Label text="Credits:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="creditsTF"/>
-      <Label text="Adress:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      <Label text="Scholarship:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="ScholarshipTF"/>
+      <Label text="Deduction:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="deductionTF"/>
        
    </GridPane>
     </VBox>
@@ -53,6 +57,13 @@
      <stylesheets>
         <URL value="@tmsfx.css"/>
   </stylesheets>
+  
+  <HBox spacing="10">
+      <Button text="Add" onAction="#handleAddStudent"  fx:id="addBtn"/>
+    <Button text="Update"/>
+    <Button text="Close"/>
+  </HBox>
+  
     
    
 </VBox>
