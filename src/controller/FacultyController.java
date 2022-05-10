@@ -5,14 +5,19 @@ import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Faculty;
 import model.Student;
+import model.TMS;
 
 
 
 public class FacultyController extends Controller<Faculty> {
     @FXML private TableView<Student> studentsTv;
+    @FXML private TextField nameTF;
+     @FXML private TextField emailTF;
+ 
     
     
   public final Student getSelectedStudent(){
@@ -41,4 +46,13 @@ public class FacultyController extends Controller<Faculty> {
      ViewLoader.showStage(getSelectedStudent(), "/view/slip.fxml", getSelectedStudent().getName() + " SLIP Report", new Stage());
  }
   
+  @FXML private void handleReport(ActionEvent event) throws Exception{
+     ViewLoader.showStage( new TMS(getFaculty()), "/view/tms.fxml", "TMS Report", new Stage());
+ }
+  
+  
+  @FXML private void handleFilter(ActionEvent event) throws Exception{
+      
+     getFaculty().filterList(nameTF.getText(), nameTF.getText());
+ }
 }

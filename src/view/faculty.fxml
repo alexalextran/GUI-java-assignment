@@ -17,10 +17,10 @@
     <Text text="Filter" styleClass="label-h2" />
       </HBox>
     <HBox alignment="CENTER">
-       <Label text="Name:"  styleClass="label-opac"/>
-        <TextField  fx:id="nameTF"/>
+       <Label text="Name:" styleClass="label-opac"/>
+        <TextField  fx:id="nameTF" promptText="Filter by name"  onAction="#handleFilter" />
         <Label text="Email:"  styleClass="label-opac"/>
-        <TextField  fx:id="emailTF" text="Filter by email"/>
+        <TextField  fx:id="emailTF" promptText="Filter by email" onAction="#handleFilter"/>
     </HBox>
     
     <Separator/>
@@ -52,7 +52,7 @@
           <Button text="Delete" onAction="#handleDeleteStudent"/>
             <Button text="Select" onAction="#handleSelectStudent" />
           <Button text="SLIP" onAction="#handleSlip"/>
-            <Button text="Report"/>
+            <Button text="Report" onAction="#handleReport"/>
           <Button text="Close"/>
     </HBox>
     
