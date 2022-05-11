@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.cell.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="400.0" prefWidth="600.0" spacing="20"  alignment="CENTER"
+<VBox xmlns:fx="http://javafx.com/fxml/1"  styleClass="background" prefHeight="430.0" prefWidth="600.0" spacing="10"  alignment="CENTER"
    fx:controller="controller.FacultyController"    >
     
     <HBox alignment="CENTER_LEFT">
     <Text text="Filter" styleClass="label-h2" />
       </HBox>
-    <HBox alignment="CENTER">
+    <HBox alignment="CENTER" spacing="10">
        <Label text="Name:" styleClass="label-opac"/>
         <TextField  fx:id="nameTF" promptText="Filter by name"  onAction="#handleFilter" />
         <Label text="Email:"  styleClass="label-opac"/>
@@ -26,18 +26,21 @@
     <Separator/>
     
     <TableView fx:id="studentsTv" items="${controller.faculty.students}" >
+      <placeholder>
+           <Label text="Students list is not loaded" />
+        </placeholder>
         <columns>
-            <TableColumn text="Name" prefWidth="200.0">
+            <TableColumn text="Name" prefWidth="192.0">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-             <TableColumn text="Email" prefWidth="200.0">
+             <TableColumn text="Email" prefWidth="192.0">
              <cellValueFactory>
                     <PropertyValueFactory property="email" />
                 </cellValueFactory>
              </TableColumn>
-              <TableColumn text="Phone" prefWidth="200.0">
+              <TableColumn text="Phone" prefWidth="192.0">
                   <cellValueFactory>
                     <PropertyValueFactory property="phone" />
                 </cellValueFactory>
@@ -49,11 +52,11 @@
     
     <HBox spacing="10"  styleClass="content">
          <Button text="Add" onAction="#handleAddStudent"/>
-          <Button text="Delete" onAction="#handleDeleteStudent"/>
-            <Button text="Select" onAction="#handleSelectStudent" />
-          <Button text="SLIP" onAction="#handleSlip"/>
+          <Button text="Delete" onAction="#handleDeleteStudent" fx:id="deleteBtn"  disable="true"/>
+            <Button text="Select" onAction="#handleSelectStudent" disable="true"  fx:id="selectBtn" />
+          <Button text="SLIP" onAction="#handleSlip"  disable="true" fx:id="slipBtn"/>
             <Button text="Report" onAction="#handleReport"/>
-          <Button text="Close"/>
+          <Button text="Close" onAction="#handleClose" />
     </HBox>
     
         

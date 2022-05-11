@@ -22,30 +22,31 @@
         <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
     </columnConstraints>
     
-    <Text styleClass="label-h2" text="Tuition Slip" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Text styleClass="label-h2" text="Tuition Slip:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
     
-      <Text text="Credits" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-      <Text text="TotalFee" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-      <Text text="Net Fee" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      <Text text="Credits:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+      <Text text="TotalFee:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+      <Text text="Net Fee:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
       
-      <Text styleClass="text-out" text="${controller.student.credits}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-      <Text styleClass="text-out" text="${controller.student.totalFee}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-      <Text styleClass="text-out" text="${controller.student.netFee}" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+      <Text styleClass="text-out" text="${controller.student.credits + ' credits'}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <Text styleClass="text-out" text="${'$' + controller.student.totalFee + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      <Text styleClass="text-out" text="${'$' + controller.student.netFee + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
       
-       <Text text="Pay Per Credit" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-      <Text text="Scholarship" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-      <Text text="Deduction" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+       <Text text="Pay Per Credit:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+      <Text text="Scholarship:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+      <Text text="Deduction:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
       
-      <Text styleClass="text-out" text="${controller.student.payPerCredit}" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-      <Text styleClass="text-out" text="${controller.student.scholarship}" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-      <Text styleClass="text-out" text="${controller.student.deduction}" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+      <Text styleClass="text-out" text="${'$' + controller.student.payPerCredit + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+      <Text styleClass="text-out" text="${ '$' + controller.student.scholarship + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+      <Text styleClass="text-out" text="${ '$'+ controller.student.deduction + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
       
-       <padding>
-        <Insets top="20"  />
-    </padding>
       
-      <HBox alignment="CENTER_LEFT" GridPane.rowIndex="8" GridPane.columnIndex="1">
-          <Button text="Close"/>
+      
+      <HBox alignment="CENTER" GridPane.rowIndex="8" GridPane.columnIndex="1">
+          <Button text="Close" prefWidth="100" onAction="#handleClose" />
+            <padding>
+                <Insets top="60" left="70" />
+          </padding>
       </HBox>
       
     <stylesheets>

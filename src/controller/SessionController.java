@@ -12,9 +12,17 @@ public class SessionController extends Controller<Session> {
    
     
    @FXML private void handleLogin(ActionEvent event) throws Exception{
-        ViewLoader.showStage(new Session(), "/view/login.fxml", "Login", new Stage());
+        ViewLoader.showStage(getSession(), "/view/login.fxml", "Login", new Stage());
                 
     }
+   
+    public final Session getSession(){
+    return model;
+}
+   
+     @FXML private void handleClose(ActionEvent event) throws Exception{
+    stage.close();
+         }
    
   
 }

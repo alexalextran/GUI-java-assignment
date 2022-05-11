@@ -28,9 +28,9 @@
         </Label >
        </HBox>
       
-      <HBox  GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="content">   
+      <HBox  GridPane.columnIndex="1" GridPane.rowIndex="4" spacing="10" styleClass="content" alignment="CENTER_RIGHT" >   
     <Button text="OK" onAction="#handleLogin"/>
-    <Button text="Cancel"/>
+    <Button text="Cancel" onAction="#handleClose" />
       </HBox>
       
        <stylesheets>

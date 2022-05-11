@@ -4,6 +4,7 @@ import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -17,6 +18,18 @@ public class FacultyController extends Controller<Faculty> {
     @FXML private TableView<Student> studentsTv;
     @FXML private TextField nameTF;
      @FXML private TextField emailTF;
+     @FXML private Button selectBtn;
+       @FXML private Button deleteBtn;
+         @FXML private Button slipBtn;
+     
+   @FXML private void initialize(){
+      studentsTv.getSelectionModel().selectedItemProperty().addListener(
+      (observable, oldStudent, newStudent) -> {
+       selectBtn.setDisable(newStudent == null);
+         deleteBtn.setDisable(newStudent == null);
+         slipBtn.setDisable(newStudent == null);
+         });
+   }
  
     
     
@@ -55,4 +68,8 @@ public class FacultyController extends Controller<Faculty> {
       
      getFaculty().filterList(nameTF.getText(), nameTF.getText());
  }
+  
+   @FXML private void handleClose(ActionEvent event) throws Exception{
+    stage.close();
+         }
 }

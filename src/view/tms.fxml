@@ -12,31 +12,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.cell.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="center" prefHeight="380.0" prefWidth="630.0" styleClass="background" spacing="10" fx:controller="controller.TMSController" >
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="center" prefHeight="600.0" prefWidth="600.0" styleClass="background" spacing="10" fx:controller="controller.TMSController" >
   
     <TableView fx:id="reportsTv" items="${controller.reports}" >
         <columns>
-            <TableColumn text="Name" prefWidth="126.0" fx:id="name">
+            <TableColumn text="Name" prefWidth="117.0" fx:id="name">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-             <TableColumn text="Tuition" prefWidth="126.0">
+             <TableColumn text="Tuition" prefWidth="117.0">
              <cellValueFactory>
                     <PropertyValueFactory property="totalFee" />
                 </cellValueFactory>
              </TableColumn>
-              <TableColumn text="Scholarship" prefWidth="126.0">
+              <TableColumn text="Scholarship" prefWidth="117.0">
                   <cellValueFactory>
                     <PropertyValueFactory property="scholarship" />
                 </cellValueFactory>
               </TableColumn>
-                <TableColumn text="Deduction" prefWidth="126.0">
+                <TableColumn text="Deduction" prefWidth="117.0">
                   <cellValueFactory>
                     <PropertyValueFactory property="deduction" />
                 </cellValueFactory>
               </TableColumn>
-                <TableColumn text="NetFee" prefWidth="126.0">
+                <TableColumn text="NetFee" prefWidth="117.0">
                   <cellValueFactory>
                     <PropertyValueFactory property="netFee" />
                 </cellValueFactory>
@@ -49,23 +49,23 @@
         <Insets top="10" bottom="10" left="10" right="10" />
     </padding>
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="19.0" prefWidth="30.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="20.0" percentWidth="19.0" prefWidth="20.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="19.0" prefWidth="30.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="20.0" percentWidth="19.0" prefWidth="20.0" />
     </columnConstraints>
     
     
-      <Text text="Total Tuition" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-      <Text text="Total NetFee" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-      <Text text="Total BAS" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      <Text text="Total Tuition:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+      <Text text="Total NetFee:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+      <Text text="Total BAS:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
       
       <Text styleClass="text-out" text= "${'$' + controller.tms.totalTuitionFee + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
       <Text styleClass="text-out" text="${'$' + controller.tms.totalNetFee + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
       <Text styleClass="text-out" text="${'$' + controller.tms.bas + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
       
-       <Text text="Total Scholarship" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-      <Text text="Total Deduction" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+       <Text text="Total Scholarship:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+      <Text text="Total Deduction:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
  
       <Text styleClass="text-out" text="${'$'+ controller.tms.totalScholarship + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
       <Text styleClass="text-out" text="${'$' + controller.tms.totalDeduction + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="2"/>

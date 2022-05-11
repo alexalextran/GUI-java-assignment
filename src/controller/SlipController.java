@@ -1,7 +1,8 @@
 package controller;
 
 import au.edu.uts.ap.javafx.Controller;
-import model.Faculty;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import model.Student;
 
 
@@ -13,5 +14,9 @@ public class SlipController  extends Controller<Student>  {
     public final Student getStudent(){
     return model;
 }
+    
+     @FXML private void handleClose(ActionEvent event) throws Exception{
+    stage.close();
+         }
     
 }

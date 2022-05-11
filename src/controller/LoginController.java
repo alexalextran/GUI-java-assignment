@@ -24,11 +24,16 @@ public final Session getSession(){
         String password = passwordTF.getText();
         if(getSession().getFaculty(email, password) != null){
          ViewLoader.showStage(getSession().getFaculty(email, password), "/view/faculty.fxml", "Session Admin: " + getSession().getFaculty(email, password).getName(), new Stage());
+          stage.close();
         } else{
             error.setText("Incorrect login details");
         }
         emailTF.setText("");
         passwordTF.setText("");
     }
+    
+     @FXML private void handleClose(ActionEvent event) throws Exception{
+    stage.close();
+         }
     
 }

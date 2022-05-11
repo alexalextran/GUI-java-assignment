@@ -25,6 +25,7 @@ public class StudentController extends Controller<Student> {
 
 
     @FXML private void initialize() {
+       
         emailTF.setText(getStudent().getEmail());
        phoneTF.setText(getStudent().getPhone());
        addressTF.setText(getStudent().getAddress());
@@ -33,13 +34,14 @@ public class StudentController extends Controller<Student> {
          creditsTF.setText(String.valueOf(getStudent().getCredits()));
           ScholarshipTF.setText(String.valueOf(getStudent().getScholarship()));
           
-       if(!(getStudent().getName().equals("a"))){
+       if(!(getStudent().getName().equals("a"))){ //updating student
+           updateBtn.setDisable(false);
        nameTF.setText(getStudent().getName());
        deductionTF.setText(String.valueOf(getStudent().getDeduction()));
         }else{
             nameTF.setText("");
              deductionTF.setText("Code");
-           
+              addBtn.setDisable(false);
        }
     }
     @FXML public void handleAddStudent(ActionEvent event) throws Exception{
@@ -56,6 +58,7 @@ public class StudentController extends Controller<Student> {
       
         Student student = new Student(name, email, phone, adress, studentid, type, credits, scholarship, deduction);  
         getStudent().getFaculty().addStudent(student);
+        stage.close();
               
     }
     
@@ -75,7 +78,7 @@ public class StudentController extends Controller<Student> {
        } 
        
       getStudent().updateDetails(name, email, phone, adress, studentid, type, credits, scholarship, deduction);   
-       deductionTF.setText(String.valueOf(getStudent().getDeduction()));
+      stage.close();
            
     }
     
@@ -85,6 +88,10 @@ public class StudentController extends Controller<Student> {
         return model;
         }
     
+      
+       @FXML private void handleClose(ActionEvent event) throws Exception{
+    stage.close();
+         }
     
 
 }

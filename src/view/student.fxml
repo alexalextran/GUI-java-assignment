@@ -11,14 +11,34 @@
 <?import javafx.scene.control.TextField ?>
 <?import javafx.scene.layout.HBox ?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="400.0" prefWidth="600.0" spacing="20"  alignment="CENTER"
    fx:controller="controller.StudentController"    >
     
     
-   <VBox styleClass="header" >
-     <Label text="Personal Details" styleClass="label-h2"/>
- <GridPane styleClass="header"  alignment="CENTER" hgap="5" vgap="20">
+   <VBox styleClass="header" alignment="CENTER">
+       
+              
+          <VBox alignment="CENTER"  >
+        <Label text="Personal Details" styleClass="label-h2" >
+        </Label>
+            <padding >
+                <Insets  right="130"/>
+            </padding>
+       </VBox>
+    
+ <GridPane styleClass="header"  alignment="CENTER" hgap="5" vgap="5" >
+     
+       <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="50" percentWidth="25.0" prefWidth="50" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="100" percentWidth="45.0" prefWidth="150" />
+    </columnConstraints>
+     
+          
+
      
         <Label text="Name:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="nameTF"/>
@@ -26,20 +46,32 @@
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="emailTF"/>
       <Label text="Phone:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="phoneTF"/>
-      <Label text="Adress:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      <Label text="Address:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="addressTF"/>
      
        
    </GridPane>
     </VBox>
-    <padding>
-         
-        <Insets top="10" bottom="10" left="5" right="5" />
-    </padding>
+    
+  <Separator />
     
     <VBox styleClass="header" alignment="CENTER">
-         <Label text="Tutition Details" styleClass="label-h2"/>
-     <GridPane styleClass="header"  alignment="CENTER" hgap="5" vgap="10">
+            
+          <VBox alignment="CENTER"  >
+        <Label text="Tuition Details" styleClass="label-h2" >
+        </Label>
+            <padding >
+                <Insets  right="150"/>
+            </padding>
+       </VBox>
+
+     <GridPane styleClass="header"  alignment="CENTER" hgap="5" vgap="5">
+         
+           <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="50" percentWidth="25.0" prefWidth="50" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="100" percentWidth="45.0" prefWidth="150" />
+    </columnConstraints>
+         
         <Label text="Student ID:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="studentidTF"/>
        <Label text="Type:"  styleClass="label-opac" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
@@ -58,10 +90,13 @@
         <URL value="@tmsfx.css"/>
   </stylesheets>
   
-  <HBox spacing="10">
-      <Button text="Add" onAction="#handleAddStudent"  fx:id="addBtn"/>
-    <Button text="Update" onAction="#handleUpdateStudent" fx:id="updateBtn"/>
-    <Button text="Close"/>
+  <HBox spacing="5" alignment="CENTER" >
+               <padding >
+                <Insets top="10" bottom="20"/>
+            </padding>
+      <Button text="Add" onAction="#handleAddStudent"  fx:id="addBtn" disable="true"/>
+    <Button text="Update" onAction="#handleUpdateStudent" fx:id="updateBtn" disable="true" />
+    <Button text="Close" onAction="#handleClose" />
   </HBox>
   
     
