@@ -14,13 +14,13 @@
    fx:controller="controller.FacultyController"    >
     
     <HBox alignment="CENTER_LEFT">
-    <Text text="Filter" styleClass="label-h2" />
+    <Label text="Filter" styleClass="label-h2" />
       </HBox>
     <HBox alignment="CENTER" spacing="10">
        <Label text="Name:" styleClass="label-opac"/>
-        <TextField  fx:id="nameTF" promptText="Filter by name"  onAction="#handleFilter" />
+        <TextField  fx:id="nameTF" promptText="Filter by name"   />
         <Label text="Email:"  styleClass="label-opac"/>
-        <TextField  fx:id="emailTF" promptText="Filter by email" onAction="#handleFilter"/>
+        <TextField  fx:id="emailTF" promptText="Filter by email"/>
     </HBox>
     
     <Separator/>
@@ -30,17 +30,17 @@
            <Label text="Students list is not loaded" />
         </placeholder>
         <columns>
-            <TableColumn text="Name" prefWidth="192.0">
+            <TableColumn text="Name" prefWidth="192.5">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-             <TableColumn text="Email" prefWidth="192.0">
+             <TableColumn text="Email" prefWidth="192.5">
              <cellValueFactory>
                     <PropertyValueFactory property="email" />
                 </cellValueFactory>
              </TableColumn>
-              <TableColumn text="Phone" prefWidth="192.0">
+              <TableColumn text="Phone" prefWidth="192.5">
                   <cellValueFactory>
                     <PropertyValueFactory property="phone" />
                 </cellValueFactory>

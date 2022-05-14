@@ -37,7 +37,10 @@ public class StudentController extends Controller<Student> {
        if(!(getStudent().getName().equals("a"))){ //updating student
            updateBtn.setDisable(false);
        nameTF.setText(getStudent().getName());
-       deductionTF.setText(String.valueOf(getStudent().getDeduction()));
+       if(getStudent().getDeduction() != 0.0){
+      deductionTF.setText(String.valueOf(getStudent().getTotalFee() * getStudent().getDeductionRate()));
+       }
+       else  deductionTF.setText(String.valueOf(0.0));
         }else{
             nameTF.setText("");
              deductionTF.setText("Code");
@@ -71,14 +74,14 @@ public class StudentController extends Controller<Student> {
         String type = typeTF.getText();
         int credits = Integer.parseInt(creditsTF.getText());
         double scholarship = Double.parseDouble(ScholarshipTF.getText());
-          String deduction = deductionTF.getText();  
+         String deduction = deductionTF.getText();  
           
           if(deduction.equals(getStudent().getDeduction()) && !deduction.equals("0.0")){
             deduction = "2022AUT";
        } 
-       
+       stage.close();
       getStudent().updateDetails(name, email, phone, adress, studentid, type, credits, scholarship, deduction);   
-      stage.close();
+      
            
     }
     

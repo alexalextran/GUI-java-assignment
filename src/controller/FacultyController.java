@@ -29,6 +29,8 @@ public class FacultyController extends Controller<Faculty> {
          deleteBtn.setDisable(newStudent == null);
          slipBtn.setDisable(newStudent == null);
          });
+      nameTF.textProperty().addListener( (observable, oldStudent, newStudent) -> {model.filterList(nameTF.getText(), "0");});
+      emailTF.textProperty().addListener( (observable, oldStudent, newStudent) -> {model.filterList("0", emailTF.getText());});
    }
  
     
@@ -64,10 +66,7 @@ public class FacultyController extends Controller<Faculty> {
  }
   
   
-  @FXML private void handleFilter(ActionEvent event) throws Exception{
-      
-     getFaculty().filterList(nameTF.getText(), nameTF.getText());
- }
+  
   
    @FXML private void handleClose(ActionEvent event) throws Exception{
     stage.close();

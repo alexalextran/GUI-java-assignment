@@ -42,10 +42,10 @@
       
       
       
-      <HBox alignment="CENTER" GridPane.rowIndex="8" GridPane.columnIndex="1">
+      <HBox alignment="CENTER" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="4"  >
           <Button text="Close" prefWidth="100" onAction="#handleClose" />
-            <padding>
-                <Insets top="60" left="70" />
+           <padding>
+                <Insets top="60" />
           </padding>
       </HBox>
       
