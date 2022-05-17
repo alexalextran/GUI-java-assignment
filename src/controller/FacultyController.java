@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Faculty;
 import model.Student;
@@ -23,6 +24,9 @@ public class FacultyController extends Controller<Faculty> {
          @FXML private Button slipBtn;
      
    @FXML private void initialize(){
+        
+       stage.getIcons().add(new Image("view/faculty.png"));
+   
       studentsTv.getSelectionModel().selectedItemProperty().addListener(
       (observable, oldStudent, newStudent) -> {
        selectBtn.setDisable(newStudent == null);

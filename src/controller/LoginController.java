@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Session;
 
@@ -19,6 +20,9 @@ public final Session getSession(){
     return model;
 }
 
+   @FXML private void initialize(){
+       stage.getIcons().add(new Image("view/book.png"));
+   }
     @FXML private void handleLogin(ActionEvent event) throws Exception{
         String email = emailTF.getText();
         String password = passwordTF.getText();

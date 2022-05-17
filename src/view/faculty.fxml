@@ -14,7 +14,7 @@
    fx:controller="controller.FacultyController"    >
     
     <HBox alignment="CENTER_LEFT">
-    <Label text="Filter" styleClass="label-h2" />
+    <Label text="Filters" styleClass="label-h2" />
       </HBox>
     <HBox alignment="CENTER" spacing="10">
        <Label text="Name:" styleClass="label-opac"/>
@@ -30,17 +30,17 @@
            <Label text="Students list is not loaded" />
         </placeholder>
         <columns>
-            <TableColumn text="Name" prefWidth="192.5">
+            <TableColumn text="Name" prefWidth="192.3">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-             <TableColumn text="Email" prefWidth="192.5">
+             <TableColumn text="Email" prefWidth="192.3">
              <cellValueFactory>
                     <PropertyValueFactory property="email" />
                 </cellValueFactory>
              </TableColumn>
-              <TableColumn text="Phone" prefWidth="192.5">
+              <TableColumn text="Phone" prefWidth="192.3">
                   <cellValueFactory>
                     <PropertyValueFactory property="phone" />
                 </cellValueFactory>

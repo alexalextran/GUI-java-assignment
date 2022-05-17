@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.InputException;
 import model.Student;
@@ -33,6 +34,7 @@ public StudentController(){
 
 
     @FXML private void initialize() {
+        stage.getIcons().add(new Image("view/edit.png"));
        
         emailTF.setText(getStudent().getEmail());
        phoneTF.setText(getStudent().getPhone());
@@ -50,6 +52,7 @@ public StudentController(){
        }
        else  deductionTF.setText(String.valueOf(0.0));
         }else{
+           stage.getIcons().add(new Image("view/edit.png"));
             nameTF.setText("");
              deductionTF.setText("Code");
               addBtn.setDisable(false);

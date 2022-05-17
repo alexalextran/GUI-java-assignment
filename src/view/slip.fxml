@@ -10,8 +10,8 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 
-<GridPane prefHeight="338.0" prefWidth="600.0" styleClass="background" alignment="CENTER"  
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SlipController"  >
+<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="338.0" prefWidth="600.0" styleClass="background" alignment="CENTER"  
+        fx:controller="controller.SlipController"  >
     <padding>
         <Insets top="10" bottom="10" left="10" right="10" />
     </padding>
@@ -24,21 +24,21 @@
     
     <Label styleClass="label-h2" text="Tuition Slip:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
     
-      <Text text="Credits:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-      <Text text="TotalFee:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-      <Text text="Net Fee:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      <Label text="Credits:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+      <Label text="TotalFee:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+      <Label text="Net Fee:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
       
-      <Text styleClass="text-out" text="${controller.student.credits + ' credits'}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-      <Text styleClass="text-out" text="${'$' + controller.student.totalFee + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-      <Text styleClass="text-out" text="${'$' + controller.student.netFee + '0'}" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+      <Text styleClass="text-out"  text="${controller.student.credits + ' credits'}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <Text styleClass="text-out" fx:id="totalFeeTxt" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      <Text styleClass="text-out" fx:id="netFeeTxt" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
       
-       <Text text="Pay Per Credit:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-      <Text text="Scholarship:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-      <Text text="Deduction:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+       <Label text="Pay Per Credit:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+      <Label text="Scholarship:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+      <Label text="Deduction:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
       
-      <Text styleClass="text-out" text="${'$' + controller.student.payPerCredit + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-      <Text styleClass="text-out" text="${ '$' + controller.student.scholarship + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-      <Text styleClass="text-out" text="${ '$'+ controller.student.deduction + '0'}" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+      <Text styleClass="text-out" fx:id="creditsTxt" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+      <Text styleClass="text-out" fx:id="scholarshipTxt" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+      <Text styleClass="text-out" fx:id="deductionTxt" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
       
       
       
