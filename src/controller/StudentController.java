@@ -47,10 +47,7 @@ public StudentController(){
        if(!(getStudent().getName().equals("a"))){ //updating student
            updateBtn.setDisable(false);
        nameTF.setText(getStudent().getName());
-       if(getStudent().getDeduction() != 0.0){
-      deductionTF.setText(String.valueOf(getStudent().getTotalFee() * getStudent().getDeductionRate()));
-       }
-       else  deductionTF.setText(String.valueOf(0.0));
+      deductionTF.setText(String.valueOf(getStudent().getDeduction()));
         }else{
            stage.getIcons().add(new Image("view/edit.png"));
             nameTF.setText("");
