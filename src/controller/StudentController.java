@@ -1,9 +1,12 @@
 package controller;
 import au.edu.uts.ap.javafx.Controller;
+import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import model.InputException;
 import model.Student;
 
 
@@ -22,6 +25,11 @@ public class StudentController extends Controller<Student> {
 @FXML TextField creditsTF;
 @FXML TextField ScholarshipTF;
 @FXML TextField deductionTF;
+Validator validator;
+
+public StudentController(){
+    validator = new Validator();
+}
 
 
     @FXML private void initialize() {
@@ -57,11 +65,21 @@ public class StudentController extends Controller<Student> {
         int credits = Integer.parseInt(creditsTF.getText());
         double scholarship = Double.parseDouble(ScholarshipTF.getText());
         String deduction = deductionTF.getText();
+        
+      //  if(!validator.isValid(name, email, phone, adress, type, studentid, credits, scholarship)){
+           //   validator.generateErrors(name, email, phone, adress, type, studentid, credits, scholarship);
+         //    ViewLoader.showStage(validator, "/view/error.fxml", "Input Exceptions " , new Stage());
+         //    validator.clear();
+       // }else{
+           
+             Student student = new Student(name, email, phone, adress, studentid, type, credits, scholarship, deduction);  
+        getStudent().getFaculty().addStudent(student);
+         stage.close();
+        //}
           
       
-        Student student = new Student(name, email, phone, adress, studentid, type, credits, scholarship, deduction);  
-        getStudent().getFaculty().addStudent(student);
-        stage.close();
+     
+     
               
     }
     

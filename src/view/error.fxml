@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.control.Label ?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 
-
-<VBox xmlns:fx="http://javafx.com/fxml"alignment="center"
-      styleClass="background" spacing="10" prefHeight="300.0" prefWidth="350.0">
-   
-    
-    
+<VBox xmlns:fx="http://javafx.com/fxml" styleClass="background" prefHeight="300.0" prefWidth="350.0" alignment="CENTER"
+      fx:controller="controller.ErrorController"   >
+      
+    <Label text="Form Validation Errors" styleClass="label-h2"></Label>
+    <VBox  alignment="CENTER">
+    <Text styleClass="text-out" fx:id="text1" ></Text>
+     <Text styleClass="text-out" fx:id="text2"  ></Text>
+      <Text styleClass="text-out" fx:id="text3" ></Text>
+       <Text styleClass="text-out" fx:id="text4" ></Text>
+        <Text styleClass="text-out" fx:id="text5" ></Text>
+         <Text styleClass="text-out" fx:id="text6" ></Text>
+          <Text styleClass="text-out" fx:id="text7" ></Text>
+           <Text styleClass="text-out" fx:id="text8" ></Text>
+           </VBox>
+           
+           <Button onAction="#handleClose"> Close </Button>
+             <stylesheets>
+        <URL value="@tmsfx.css"/>
+  </stylesheets>
+  
 </VBox>
 
