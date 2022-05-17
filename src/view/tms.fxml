@@ -16,27 +16,27 @@
   
     <TableView fx:id="reportsTv" items="${controller.reports}" >
         <columns>
-            <TableColumn text="Name" prefWidth="117.0" fx:id="name">
+            <TableColumn text="Name" prefWidth="115.5" fx:id="name">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-             <TableColumn text="Tuition" prefWidth="117.0">
+             <TableColumn text="Tuition" prefWidth="115.5">
              <cellValueFactory>
                     <PropertyValueFactory property="totalFee" />
                 </cellValueFactory>
              </TableColumn>
-              <TableColumn text="Scholarship" prefWidth="117.0">
+              <TableColumn text="Scholarship" prefWidth="115.5">
                   <cellValueFactory>
                     <PropertyValueFactory property="scholarship" />
                 </cellValueFactory>
               </TableColumn>
-                <TableColumn text="Deduction" prefWidth="117.0">
+                <TableColumn text="Deduction" prefWidth="115.5">
                   <cellValueFactory>
                     <PropertyValueFactory property="deduction" />
                 </cellValueFactory>
               </TableColumn>
-                <TableColumn text="NetFee" prefWidth="117.0">
+                <TableColumn text="NetFee" prefWidth="115.5">
                   <cellValueFactory>
                     <PropertyValueFactory property="netFee" />
                 </cellValueFactory>

@@ -22,7 +22,7 @@
         <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
     </columnConstraints>
     
-    <Text styleClass="label-h2" text="Tuition Slip:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label styleClass="label-h2" text="Tuition Slip:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
     
       <Text text="Credits:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
       <Text text="TotalFee:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
