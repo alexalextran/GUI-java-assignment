@@ -10,8 +10,8 @@ public class Faculties {
     public Faculties() {
         faculties = FXCollections.observableArrayList(
                 new Faculty("John Smith", "john.smith@uts.com", "user222"),
-                new Faculty("Jane Tyler", "jane.tyler@uts.com", "super123"),
-                new Faculty("","","")
+                new Faculty("Jane Tyler", "jane.tyler@uts.com", "super123")
+               
         );      
     }
    

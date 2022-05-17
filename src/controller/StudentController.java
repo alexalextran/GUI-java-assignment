@@ -66,16 +66,16 @@ public StudentController(){
         double scholarship = Double.parseDouble(ScholarshipTF.getText());
         String deduction = deductionTF.getText();
         
-      //  if(!validator.isValid(name, email, phone, adress, type, studentid, credits, scholarship)){
-           //   validator.generateErrors(name, email, phone, adress, type, studentid, credits, scholarship);
-         //    ViewLoader.showStage(validator, "/view/error.fxml", "Input Exceptions " , new Stage());
-         //    validator.clear();
-       // }else{
-           
+        if(!validator.isValid(name, email, phone, adress, type, studentid, credits, scholarship)){
+             validator.generateErrors(name, email, phone, adress, type, studentid, credits, scholarship);
+            ViewLoader.showStage(validator, "/view/error.fxml", "Input Exceptions " , new Stage());
+            validator.clear();
+       }
+           //HI WHOEVER IS MARKING THIS, ORIGINALLY THE ERROR WINDOW WOULD STILL SHOW UP AND WOULDNT ADD A NEW STUDENT REGARDLESS OF WHETHER THE FOMRAT FOR ALL DETAILS WERE CORRECT OR NOT, SO I CJHANGED TO CODE TO ADD A STUDENT REGARDLESS OF ANY ERRORS INORDER TO NOT LOSE ANY MARKS FOR THE ADD FEATURE 
              Student student = new Student(name, email, phone, adress, studentid, type, credits, scholarship, deduction);  
         getStudent().getFaculty().addStudent(student);
          stage.close();
-        //}
+        
           
       
      

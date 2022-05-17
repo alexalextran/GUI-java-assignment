@@ -4,6 +4,7 @@ import au.edu.uts.ap.javafx.Controller;
 import java.util.LinkedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 
 
@@ -29,6 +30,7 @@ public class ErrorController extends Controller<Validator> {
 
    
     @FXML private void initialize() {
+          stage.getIcons().add(new Image("view/error.png"));
            this.errorMsgs.add(text1);
         this.errorMsgs.add(text2);
          this.errorMsgs.add(text3);
